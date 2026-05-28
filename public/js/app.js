@@ -418,7 +418,7 @@ async function doSubmit() {
   targets.forEach((t) => (state.prStatuses[t.id] = "idle"));
   renderPRStatus(targets);
 
-  setSubmitStatus("Submitting pull requests…", "amber");
+  setSubmitStatus("deploying pull requests…", "amber");
 
   try {
     const res = await fetch(`${CONFIG.WORKER_URL}/submit`, {
@@ -461,10 +461,10 @@ async function doSubmit() {
     const failed = targets.length - succeeded;
 
     if (failed === 0) {
-      setSubmitStatus(`All ${succeeded} PRs opened successfully`, "green");
-      document.getElementById("submitBtn").innerHTML = "✓ Submitted!";
+      setSubmitStatus(`${succeeded}/${targets.length} deployments complete`, "green");
+      document.getElementById("submitBtn").innerHTML = "✓ Deployed";
     } else {
-      setSubmitStatus(`${succeeded} PRs opened, ${failed} failed — see below`, "amber");
+      setSubmitStatus(`${succeeded} deployed · ${failed} failed — see log`, "amber");
       document.getElementById("submitBtn").disabled = false;
       document.getElementById("submitBtn").textContent = "Retry failed";
     }
@@ -481,7 +481,7 @@ function renderPRStatus(targets) {
     .map((t) => {
       const s = state.prStatuses[t.id] || "idle";
       const badgeMap = { idle: "b-idle", pend: "b-pend", done: "b-done", err: "b-err" };
-      const labelMap = { idle: "Queued", pend: "Submitting…", done: "PR opened", err: "Failed" };
+      const labelMap = { idle: "queued", pend: "deploying…", done: "pr opened", err: "failed" };
       const url = state.prStatuses[t.id + "_url"];
       const errMsg = state.prStatuses[t.id + "_err"];
       return `
@@ -546,7 +546,14 @@ function getForm() {
 
 function showError(msg) {
   console.error(msg);
-  alert(msg); // Replace with toast UI in production
+  const existing = document.getElementById("_toast");
+  if (existing) existing.remove();
+  const el = document.createElement("div");
+  el.id = "_toast";
+  el.className = "toast toast-err";
+  el.innerHTML = `<svg class="toast-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>${msg}</span>`;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 6000);
 }
 
 // ── Init ────────────────────────────────────────────────────────────────────────

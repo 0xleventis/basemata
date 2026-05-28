@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Base Mata — List your token on every Base DEX</title>
-<meta name="description" content="Submit your Base token logo and metadata to Uniswap, Aerodrome, SushiSwap, Coinbase Wallet and more — in one click." />
+<title>Base Mata — Autonomous token registry agent</title>
+<meta name="description" content="Deploy your Base token to Uniswap, Aerodrome, SushiSwap, Coinbase Wallet and more. One execution — pull requests open automatically." />
 <meta property="og:title" content="Base Mata" />
-<meta property="og:description" content="One form. All Base DEX token lists. Open pull requests automatically with your GitHub identity." />
+<meta property="og:description" content="Autonomous token registry agent for Base. One execution. Six registries. Pull requests open with your GitHub identity." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,18 +18,18 @@
 <header class="site-header">
   <div class="container header-inner">
     <div class="logo-mark">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
         <circle cx="14" cy="14" r="14" fill="#0052FF"/>
         <circle cx="14" cy="14" r="6" fill="white"/>
       </svg>
-      <span>Token Registry</span>
+      base-mata
     </div>
     <nav class="header-nav">
-      <a href="#how-it-works">How it works</a>
-      <a href="#registries">Registries</a>
+      <a href="#how-it-works">how it works</a>
+      <a href="#registries">registries</a>
       <a href="https://github.com/0xleventis/basemata" target="_blank" rel="noopener" class="nav-gh">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        GitHub
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        source
       </a>
     </nav>
   </div>
@@ -38,37 +38,48 @@
 <main>
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">Built for Base</div>
-      <h1>List your token on every<br /><span class="hero-accent">Base DEX</span> at once</h1>
-      <p class="hero-sub">Fill in your token details once. We open authenticated pull requests to Uniswap, Aerodrome, SushiSwap, Coinbase Wallet and more — automatically.</p>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        agent.ready
+      </div>
+      <h1>Deploy your token to every<br /><span class="hero-accent">Base DEX</span> autonomously</h1>
+      <p class="hero-sub">Fill in your token once. The agent forks each registry, commits your logo and metadata, and opens authenticated pull requests — automatically.</p>
+
+      <div class="agent-bar">
+        <div class="agent-bar-item"><span class="agent-bar-dot on"></span>uniswap</div>
+        <div class="agent-bar-item"><span class="agent-bar-dot on"></span>aerodrome</div>
+        <div class="agent-bar-item"><span class="agent-bar-dot on"></span>baseswap</div>
+        <div class="agent-bar-item"><span class="agent-bar-dot on"></span>coinbase</div>
+        <div class="agent-bar-item"><span class="agent-bar-dot on"></span>sushiswap</div>
+        <div class="agent-bar-item"><span class="agent-bar-dot pulse"></span>trust wallet</div>
+      </div>
+
       <div class="dex-logos">
-        <span class="dex-chip">Uniswap</span>
-        <span class="dex-chip">Aerodrome</span>
-        <span class="dex-chip">BaseSwap</span>
-        <span class="dex-chip">Coinbase Wallet</span>
-        <span class="dex-chip">SushiSwap</span>
-        <span class="dex-chip">Trust Wallet</span>
+        <span class="dex-chip">6 registries</span>
+        <span class="dex-chip">base mainnet</span>
+        <span class="dex-chip">public_repo scope</span>
+        <span class="dex-chip">zero custody</span>
       </div>
     </div>
   </section>
 
   <section class="form-section" id="submit">
     <div class="container">
-      <div class="steps-nav" role="tablist" aria-label="Form steps">
+      <div class="steps-nav" role="tablist" aria-label="Agent steps">
         <button class="step active" data-step="0" role="tab" aria-selected="true" aria-controls="step-panel-0" onclick="goStep(0)">
-          <span class="step-num">1</span><span class="step-label">Connect GitHub</span>
+          <span class="step-num">01</span><span class="step-label">Auth</span>
         </button>
         <div class="step-sep" aria-hidden="true"></div>
         <button class="step" data-step="1" role="tab" aria-selected="false" aria-controls="step-panel-1" onclick="goStep(1)">
-          <span class="step-num">2</span><span class="step-label">Token details</span>
+          <span class="step-num">02</span><span class="step-label">Configure</span>
         </button>
         <div class="step-sep" aria-hidden="true"></div>
         <button class="step" data-step="2" role="tab" aria-selected="false" aria-controls="step-panel-2" onclick="goStep(2)">
-          <span class="step-num">3</span><span class="step-label">Registries</span>
+          <span class="step-num">03</span><span class="step-label">Target</span>
         </button>
         <div class="step-sep" aria-hidden="true"></div>
         <button class="step" data-step="3" role="tab" aria-selected="false" aria-controls="step-panel-3" onclick="goStep(3)">
-          <span class="step-num">4</span><span class="step-label">Submit</span>
+          <span class="step-num">04</span><span class="step-label">Deploy</span>
         </button>
       </div>
 
@@ -77,16 +88,16 @@
         <div class="panel-grid">
           <div class="panel-main">
             <div class="card">
-              <h2 class="card-title">Connect your GitHub account</h2>
-              <p class="card-desc">PRs submitted with a real GitHub identity are reviewed faster. Maintainers can see your profile and reach you for follow-up. This app only requests <code>public_repo</code> scope.</p>
+              <h2 class="card-title">authenticate github identity</h2>
+              <p class="card-desc">PRs are opened under your GitHub account — giving maintainers a real identity to review and contact. Only <code>public_repo</code> scope is requested.</p>
               <div id="ghDisconnected">
                 <button class="btn-github" onclick="connectGitHub()" id="ghConnectBtn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  Sign in with GitHub
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  Connect GitHub
                 </button>
                 <div class="alert-info" style="margin-top:14px">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                  Only <strong>public_repo</strong> permission is requested — read/write on public repos only. No access to private repositories, no email, no personal data.
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <code>public_repo</code> only — read/write on public repos. No private repos, no email, no personal data accessed.
                 </div>
               </div>
               <div id="ghConnected" style="display:none">
@@ -99,23 +110,23 @@
                   <button class="btn-ghost sm" onclick="disconnectGitHub()">Disconnect</button>
                 </div>
                 <div class="alert-success" style="margin-top:12px">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  Authenticated as <strong id="ghLoginBadge">—</strong>. Pull requests will appear on your GitHub profile.
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Identity confirmed — <strong id="ghLoginBadge">—</strong>. Pull requests will appear on your profile.
                 </div>
                 <button class="btn-primary full" style="margin-top:16px" onclick="goStep(1)">
-                  Continue to token details <span aria-hidden="true">→</span>
+                  Configure token <span aria-hidden="true">→</span>
                 </button>
               </div>
             </div>
           </div>
           <div class="panel-side">
             <div class="info-card">
-              <div class="info-card-title">Why GitHub?</div>
+              <div class="info-card-title">// why github auth</div>
               <ul class="info-list">
-                <li>Registry maintainers can contact you with questions</li>
+                <li>Maintainers can contact you with questions</li>
                 <li>Your identity builds trust — anonymous PRs are often slow or rejected</li>
-                <li>PRs appear publicly on your profile</li>
-                <li>Only <code>public_repo</code> scope — nothing private is touched</li>
+                <li>PRs appear on your public GitHub profile</li>
+                <li>Only <code>public_repo</code> — nothing private is touched</li>
               </ul>
             </div>
           </div>
@@ -127,7 +138,7 @@
         <div class="panel-grid">
           <div class="panel-main">
             <div class="card">
-              <h2 class="card-title">Token details</h2>
+              <h2 class="card-title">token metadata</h2>
               <div class="form-row two">
                 <div class="upload-group">
                   <label class="field-label">Logo <span class="required">*</span></label>
@@ -135,7 +146,7 @@
                     <input type="file" accept="image/png,image/svg+xml" id="logoInput" aria-label="Choose logo file" />
                     <div class="logo-preview-wrap" id="logoWrap">
                       <div class="logo-placeholder" id="logoPlaceholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                       </div>
                       <img id="logoPreviewImg" style="display:none" alt="Token logo preview" />
                     </div>
@@ -158,13 +169,13 @@
                 </div>
               </div>
 
-              <div class="field">
+              <div class="field" style="margin-top:14px">
                 <label class="field-label" for="tokenAddress">Contract address (Base) <span class="required">*</span></label>
                 <input type="text" id="tokenAddress" placeholder="0x…" class="mono" autocomplete="off" oninput="scheduleValidate()" spellcheck="false" />
                 <div id="contractMsg" style="display:none" class="field-msg"></div>
               </div>
 
-              <div class="form-row three">
+              <div class="form-row three" style="margin-top:14px">
                 <div class="field">
                   <label class="field-label" for="tokenDecimals">Decimals</label>
                   <input type="number" id="tokenDecimals" value="18" min="0" max="18" />
@@ -178,84 +189,84 @@
                 </div>
               </div>
 
-              <div class="field">
+              <div class="field" style="margin-top:14px">
                 <label class="field-label" for="tokenDesc">Description</label>
-                <textarea id="tokenDesc" placeholder="A brief description of your token and its utility…" rows="3"></textarea>
+                <textarea id="tokenDesc" placeholder="Brief description of your token and its utility…" rows="3"></textarea>
               </div>
             </div>
 
-            <div class="card" style="margin-top:16px">
-              <h2 class="card-title">Social links</h2>
+            <div class="card" style="margin-top:14px">
+              <h2 class="card-title">social links</h2>
               <div class="form-row two">
                 <div class="field">
                   <label class="field-label" for="linkWeb">Website</label>
                   <div class="input-icon-wrap">
-                    <svg class="input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <svg class="input-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                     <input type="url" id="linkWeb" placeholder="https://yourtoken.xyz" />
                   </div>
                 </div>
                 <div class="field">
                   <label class="field-label" for="linkTwitter">Twitter / X</label>
                   <div class="input-icon-wrap">
-                    <svg class="input-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <svg class="input-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     <input type="url" id="linkTwitter" placeholder="https://twitter.com/…" />
                   </div>
                 </div>
                 <div class="field">
                   <label class="field-label" for="linkDiscord">Discord</label>
                   <div class="input-icon-wrap">
-                    <svg class="input-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.04.03.052a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+                    <svg class="input-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.04.03.052a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
                     <input type="url" id="linkDiscord" placeholder="https://discord.gg/…" />
                   </div>
                 </div>
                 <div class="field">
                   <label class="field-label" for="linkTelegram">Telegram</label>
                   <div class="input-icon-wrap">
-                    <svg class="input-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    <svg class="input-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
                     <input type="url" id="linkTelegram" placeholder="https://t.me/…" />
                   </div>
                 </div>
                 <div class="field">
                   <label class="field-label" for="linkGithub">GitHub</label>
                   <div class="input-icon-wrap">
-                    <svg class="input-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <svg class="input-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                     <input type="url" id="linkGithub" placeholder="https://github.com/…" />
                   </div>
                 </div>
                 <div class="field">
-                  <label class="field-label" for="linkCoinGecko">CoinGecko ID <span class="optional">(optional)</span></label>
+                  <label class="field-label" for="cgId">CoinGecko ID <span class="optional">(optional)</span></label>
                   <input type="text" id="cgId" placeholder="my-token" class="mono" />
                 </div>
               </div>
             </div>
 
-            <div class="card" style="margin-top:16px">
-              <h2 class="card-title">Tags</h2>
+            <div class="card" style="margin-top:14px">
+              <h2 class="card-title">tags</h2>
               <div class="tags-field" id="tagsField" onclick="document.getElementById('tagIn').focus()">
-                <input type="text" id="tagIn" placeholder="Type a tag and press Enter…" autocomplete="off" />
+                <input type="text" id="tagIn" placeholder="type a tag and press enter…" autocomplete="off" />
               </div>
-              <p class="field-hint">Common tags: defi · stablecoin · governance · nft · gamefi · wrapped · liquid-staking</p>
+              <p class="field-hint">// common: defi · stablecoin · governance · nft · gamefi · wrapped · liquid-staking</p>
             </div>
 
             <div class="step-actions">
               <button class="btn-ghost" onclick="goStep(0)">← Back</button>
-              <button class="btn-primary" onclick="goStep(2)">Continue to registries →</button>
+              <button class="btn-primary" onclick="goStep(2)">Select targets →</button>
             </div>
           </div>
 
           <div class="panel-side">
             <div class="info-card sticky-side">
-              <div class="info-card-title">Logo requirements</div>
+              <div class="info-card-title">// logo spec</div>
               <ul class="info-list">
-                <li>PNG or SVG format only</li>
+                <li>PNG or SVG format</li>
                 <li>Minimum 256×256 pixels</li>
                 <li>File size under 100KB</li>
-                <li>Square aspect ratio (1:1)</li>
+                <li>Square 1:1 aspect ratio</li>
                 <li>Transparent background preferred</li>
-                <li>No border or padding built in</li>
+                <li>No built-in border or padding</li>
               </ul>
-              <div class="info-card-title" style="margin-top:16px">Contract validation</div>
-              <p style="font-size:13px; color:#666; line-height:1.6">We call Base mainnet RPC to confirm your address is a valid ERC-20 and auto-fill name, symbol, and decimals.</p>
+              <div class="info-card-title" style="margin-top:16px">// contract validation</div>
+              <p style="font-size:12px; color:var(--text-2); line-height:1.7">Calls Base mainnet RPC to confirm your address is a valid ERC-20. Auto-fills name, symbol, and decimals on success.</p>
             </div>
           </div>
         </div>
@@ -264,12 +275,12 @@
       <!-- Step 2: Registries -->
       <div class="step-panel" id="step-panel-2" role="tabpanel">
         <div class="card">
-          <h2 class="card-title">Choose registries</h2>
-          <p class="card-desc">Each selected registry receives a pull request. Once merged by maintainers (typically 1–5 days), your token logo and metadata appear on that DEX automatically.</p>
+          <h2 class="card-title">select deployment targets</h2>
+          <p class="card-desc">Each selected registry gets a pull request. Once merged by maintainers (typically 1–5 days), your token logo and metadata propagate to that DEX automatically.</p>
           <div class="registries-grid" id="regGrid"></div>
           <div class="step-actions">
             <button class="btn-ghost" onclick="goStep(1)">← Back</button>
-            <button class="btn-primary" onclick="goStep(3)">Review &amp; submit →</button>
+            <button class="btn-primary" onclick="goStep(3)">Review &amp; deploy →</button>
           </div>
         </div>
       </div>
@@ -279,16 +290,16 @@
         <div class="panel-grid">
           <div class="panel-main">
             <div class="card" id="reviewCard">
-              <h2 class="card-title">Review submission</h2>
+              <h2 class="card-title">deployment manifest</h2>
               <div id="reviewContent"></div>
             </div>
 
-            <div class="card" style="margin-top:16px" id="submitCard">
+            <div class="card" style="margin-top:14px" id="submitCard">
               <div class="submit-row">
                 <div>
                   <div id="submitStatus" class="status-row">
                     <div class="status-dot green"></div>
-                    <span>Ready to submit</span>
+                    <span>agent ready</span>
                   </div>
                   <div class="progress-wrap" id="progWrap" style="display:none">
                     <div class="progress-bar" id="progBar"></div>
@@ -297,21 +308,21 @@
                 <div class="submit-btns">
                   <button class="btn-ghost" onclick="showJSON()">Preview JSON</button>
                   <button class="btn-primary" id="submitBtn" onclick="doSubmit()">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                    Open pull requests
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="5 12 12 5 19 12"/><polyline points="5 19 12 12 19 19"/></svg>
+                    Execute deployment
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="card" id="prStatusCard" style="display:none; margin-top:16px">
-              <h2 class="card-title">Pull request status</h2>
+            <div class="card" id="prStatusCard" style="display:none; margin-top:14px">
+              <h2 class="card-title">deployment log</h2>
               <div id="prStatusRows"></div>
             </div>
 
-            <div class="card" id="jsonCard" style="display:none; margin-top:16px">
+            <div class="card" id="jsonCard" style="display:none; margin-top:14px">
               <div class="json-header">
-                <span class="card-title" style="margin:0">token-list entry (JSON)</span>
+                <span class="card-title" style="margin:0">token-list entry</span>
                 <button class="btn-ghost sm" onclick="document.getElementById('jsonCard').style.display='none'">Close</button>
               </div>
               <pre id="jsonOut"></pre>
@@ -319,12 +330,12 @@
           </div>
           <div class="panel-side">
             <div class="info-card sticky-side">
-              <div class="info-card-title">After submitting</div>
+              <div class="info-card-title">// after deploy</div>
               <ul class="info-list">
-                <li>PRs are opened on each registry's GitHub with your identity</li>
-                <li>Maintainers review and merge (1–5 business days typical)</li>
-                <li>On merge, DEX frontends automatically pick up the new logo and metadata</li>
-                <li>You can track PR status via the links below</li>
+                <li>PRs open on each registry with your identity</li>
+                <li>Maintainers review and merge (1–5 days)</li>
+                <li>On merge, DEX frontends auto-pick up logo and metadata</li>
+                <li>Track all PR links in the deployment log below</li>
               </ul>
             </div>
           </div>
@@ -335,27 +346,27 @@
 
   <section class="how-section" id="how-it-works">
     <div class="container">
-      <h2 class="section-title">How it works</h2>
+      <h2 class="section-title">how it works</h2>
       <div class="how-grid">
         <div class="how-step">
-          <div class="how-num">01</div>
-          <h3>Connect GitHub</h3>
-          <p>Authorize with public_repo scope. Your identity attaches to every PR, building trust with maintainers.</p>
+          <div class="how-num">step_01</div>
+          <h3>Authenticate</h3>
+          <p>Authorize with public_repo scope. Your identity attaches to every PR — anonymous PRs are often ignored or rejected.</p>
         </div>
         <div class="how-step">
-          <div class="how-num">02</div>
-          <h3>Fill in metadata</h3>
-          <p>Upload your logo, paste your contract address (auto-validated on-chain), and add socials and tags.</p>
+          <div class="how-num">step_02</div>
+          <h3>Configure token</h3>
+          <p>Upload logo, paste contract address (auto-validated on Base RPC), add socials and tags. One form for all registries.</p>
         </div>
         <div class="how-step">
-          <div class="how-num">03</div>
-          <h3>Choose registries</h3>
-          <p>Select which DEX token lists to target. Each one maintains its own GitHub repo as the source of truth.</p>
+          <div class="how-num">step_03</div>
+          <h3>Select targets</h3>
+          <p>Choose which DEX token lists to target. Each maintains its own GitHub repo as the source of truth for its frontend.</p>
         </div>
         <div class="how-step">
-          <div class="how-num">04</div>
+          <div class="how-num">step_04</div>
           <h3>Auto-propagation</h3>
-          <p>Once a maintainer merges your PR, the DEX frontend reads from that repo and your token appears automatically.</p>
+          <p>Agent forks, commits, and opens PRs. On merge, the DEX reads from that repo and your token appears automatically.</p>
         </div>
       </div>
     </div>
@@ -363,7 +374,7 @@
 
   <section class="registries-section" id="registries">
     <div class="container">
-      <h2 class="section-title">Supported registries</h2>
+      <h2 class="section-title">supported registries</h2>
       <div class="reg-table-wrap">
         <table class="reg-table">
           <thead>
@@ -391,15 +402,15 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-logo">
-      <svg width="20" height="20" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="14" fill="#0052FF"/><circle cx="14" cy="14" r="6" fill="white"/></svg>
-      Base Mata Registry
+      <svg width="18" height="18" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="14" fill="#0052FF"/><circle cx="14" cy="14" r="6" fill="white"/></svg>
+      base-mata/registry
     </div>
     <div class="footer-links">
-      <a href="https://github.com/your-org/token-registry" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://docs.base.org" target="_blank" rel="noopener">Base docs</a>
-      <a href="mailto:hello@tokenregistry.xyz">Contact</a>
+      <a href="https://github.com/your-org/token-registry" target="_blank" rel="noopener">github</a>
+      <a href="https://docs.base.org" target="_blank" rel="noopener">base docs</a>
+      <a href="mailto:hello@tokenregistry.xyz">contact</a>
     </div>
-    <p class="footer-note">This tool opens pull requests on your behalf. Approvals are at the discretion of each registry's maintainers.</p>
+    <p class="footer-note">// PRs opened on your behalf. Approvals are at each registry maintainer's discretion.</p>
   </div>
 </footer>
 
