@@ -149,13 +149,15 @@ app.post("/submit", async (req, res) => {
       const forkOwner = me.login;
       const forkRepo = reg.repo;
 
-      // Give GitHub a moment to provision the fork
-      await sleep(2500);
-
-      // 2. Get base branch SHA
-      const baseRef = await api(`/repos/${forkOwner}/${forkRepo}/git/ref/heads/${reg.branch}`);
-      const baseSha = baseRef?.object?.sha;
-      if (!baseSha) throw new Error("Could not get base branch SHA — fork may still be provisioning");
+      // 2. Poll until the fork is provisioned and the base branch SHA is available
+      let baseSha = null;
+      for (let attempt = 0; attempt < 10; attempt++) {
+        await sleep(attempt === 0 ? 2000 : 3000);
+        const baseRef = await api(`/repos/${forkOwner}/${forkRepo}/git/ref/heads/${reg.branch}`);
+        baseSha = baseRef?.object?.sha;
+        if (baseSha) break;
+      }
+      if (!baseSha) throw new Error("Fork provisioning timed out — please try again in a moment");
 
       // 3. Create branch
       const branchName = `add-token-${token.symbol.toLowerCase()}-${Date.now()}`;
