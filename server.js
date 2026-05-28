@@ -120,9 +120,23 @@ app.post("/submit", async (req, res) => {
 
   const api = gh(access_token);
 
-  // Verify token
-  const me = await api("/user");
+  // Verify token and check scopes from the response header
+  const meRes = await fetch("https://api.github.com/user", {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+      "User-Agent": "TokenRegistryApp/1.0",
+      Accept: "application/vnd.github+json",
+    },
+  });
+  const me = await meRes.json();
   if (me.message) return res.status(401).json({ error: "Invalid GitHub token" });
+
+  const grantedScopes = meRes.headers.get("x-oauth-scopes") || "";
+  if (!grantedScopes.split(",").map(s => s.trim()).includes("repo")) {
+    return res.status(403).json({
+      error: `Insufficient scope (granted: "${grantedScopes || "none"}") — disconnect and reconnect GitHub to grant repo access`,
+    });
+  }
 
   const results = {};
 
