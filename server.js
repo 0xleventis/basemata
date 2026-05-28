@@ -141,13 +141,16 @@ app.post("/submit", async (req, res) => {
     if (!reg) { results[regId] = { error: "Unknown registry" }; continue; }
 
     try {
-      // 1. Fork (idempotent)
-      await api(`/repos/${reg.owner}/${reg.repo}/forks`, {
+      // 1. Fork (idempotent) — use the actual name GitHub assigns, not the assumed reg.repo
+      const forkData = await api(`/repos/${reg.owner}/${reg.repo}/forks`, {
         method: "POST",
         body: { default_branch_only: true },
       });
+      if (forkData?.message && !forkData?.name) {
+        throw new Error(`Fork failed: ${forkData.message}`);
+      }
       const forkOwner = me.login;
-      const forkRepo = reg.repo;
+      const forkRepo = forkData?.name || reg.repo;
 
       // 2. Poll until the fork is provisioned and the base branch SHA is available
       let baseSha = null;
@@ -156,8 +159,12 @@ app.post("/submit", async (req, res) => {
         const baseRef = await api(`/repos/${forkOwner}/${forkRepo}/git/ref/heads/${reg.branch}`);
         baseSha = baseRef?.object?.sha;
         if (baseSha) break;
+        // Any message other than "Not Found" is a real API error — fail fast instead of retrying
+        if (baseRef?.message && baseRef.message !== "Not Found") {
+          throw new Error(`GitHub API error: ${baseRef.message}`);
+        }
       }
-      if (!baseSha) throw new Error("Fork provisioning timed out — please try again in a moment");
+      if (!baseSha) throw new Error("Fork provisioning timed out — try again in a moment");
 
       // 3. Create branch
       const branchName = `add-token-${token.symbol.toLowerCase()}-${Date.now()}`;
