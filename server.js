@@ -25,20 +25,10 @@ const REGISTRIES = {
     tokenListPath: "src/tokens/base.json", logoDir: "src/logos",
     prTitle: (sym) => `Add ${sym} token (Base)`,
   },
-  aerodrome: {
-    owner: "aerodrome-finance", repo: "tokenlist", branch: "main",
-    tokenListPath: "src/tokens/base.json", logoDir: "src/logos",
-    prTitle: (sym) => `Add ${sym} to Base token list`,
-  },
   baseswap: {
-    owner: "BaseSwapDex", repo: "token-list", branch: "main",
-    tokenListPath: "baseswap-default.tokenlist.json", logoDir: "logos",
+    owner: "baseswapfi", repo: "default-token-list", branch: "main",
+    tokenListPath: "src/tokens/base.json", logoDir: "images",
     prTitle: (sym) => `[Token Request] ${sym} on Base`,
-  },
-  coinbase: {
-    owner: "coinbase", repo: "node-wallets-ecosystem-token-list", branch: "main",
-    tokenListPath: "src/tokens/base.json", logoDir: "src/logos",
-    prTitle: (sym) => `Add ${sym} token to Base list`,
   },
   sushi: {
     owner: "sushiswap", repo: "default-token-list", branch: "master",

@@ -12,12 +12,10 @@ const CONFIG = {
 };
 
 const DEXES = [
-  { id: "uniswap",   name: "Uniswap",        sub: "tokenlists.org",              repo: "Uniswap/default-token-list" },
-  { id: "aerodrome", name: "Aerodrome",       sub: "aerodrome-finance",           repo: "aerodrome-finance/tokenlist" },
-  { id: "baseswap",  name: "BaseSwap",        sub: "BaseSwapDex",                 repo: "BaseSwapDex/token-list" },
-  { id: "coinbase",  name: "Coinbase Wallet", sub: "coinbase token list",         repo: "coinbase/node-wallets-ecosystem-token-list" },
-  { id: "sushi",     name: "SushiSwap",       sub: "sushiswap default list",      repo: "sushiswap/default-token-list" },
-  { id: "trust",     name: "Trust Wallet",    sub: "assets.trustwallet.com",      repo: "trustwallet/assets" },
+  { id: "uniswap",  name: "Uniswap",     sub: "tokenlists.org",          repo: "Uniswap/default-token-list" },
+  { id: "baseswap", name: "BaseSwap",    sub: "baseswapfi",              repo: "baseswapfi/default-token-list" },
+  { id: "sushi",    name: "SushiSwap",   sub: "sushiswap default list",  repo: "sushiswap/default-token-list" },
+  { id: "trust",    name: "Trust Wallet",sub: "assets.trustwallet.com",  repo: "trustwallet/assets" },
 ];
 
 // ── State ──────────────────────────────────────────────────────────────────────
@@ -30,7 +28,7 @@ let state = {
   logoBase64: null,
   logoMimeType: null,
   tags: [],
-  selectedRegs: new Set(["uniswap", "aerodrome", "baseswap", "coinbase"]),
+  selectedRegs: new Set(["uniswap", "baseswap", "sushi", "trust"]),
   contractValid: null,
   validateTimer: null,
   prStatuses: {},
