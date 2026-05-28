@@ -1,0 +1,19 @@
+{
+  "name": "token-registry-app",
+  "version": "1.0.0",
+  "description": "Base token logo and metadata submitter — opens PRs on DEX token list registries",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  }
+}

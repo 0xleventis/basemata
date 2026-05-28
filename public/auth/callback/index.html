@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Authenticating…</title>
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    height: 100vh; margin: 0; background: #fafaf9; color: #555;
+    font-size: 14px;
+  }
+  .wrap { text-align: center; }
+  .spinner {
+    width: 32px; height: 32px; border: 2.5px solid #e0deda;
+    border-top-color: #0052FF; border-radius: 50%;
+    animation: spin .7s linear infinite; margin: 0 auto 14px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="spinner"></div>
+  <p id="msg">Completing GitHub authentication…</p>
+</div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
+  const state = params.get("state");
+  const error = params.get("error");
+
+  if (error) {
+    document.getElementById("msg").textContent = "Authentication cancelled.";
+    setTimeout(() => window.close(), 1500);
+  } else if (code && window.opener) {
+    window.opener.postMessage(
+      { gh_code: code, state },
+      window.location.origin
+    );
+    document.getElementById("msg").textContent = "Done! Closing…";
+    window.close();
+  } else {
+    document.getElementById("msg").textContent = "Something went wrong. You can close this window.";
+  }
+</script>
+</body>
+</html>
