@@ -7,7 +7,7 @@ const CONFIG = {
   // Railway serves both frontend and API from the same domain.
   // No URL change needed — just set GITHUB_CLIENT_ID below.
   WORKER_URL: window.location.origin,
-  GITHUB_CLIENT_ID: "YOUR_GITHUB_CLIENT_ID",  // ← paste your GitHub OAuth App client ID here
+  GITHUB_CLIENT_ID: "Iv23liwEe0bfZHY82lS4",  // ← paste your GitHub OAuth App client ID here
   REDIRECT_URI: window.location.origin + "/auth/callback",
 };
 
