@@ -75,14 +75,11 @@ function gh(token) {
 
 // ── Routes ─────────────────────────────────────────────────────────────────────
 
-// GET /auth/callback?code=xxx&state=xxx
-app.get("/auth/callback", async (req, res) => {
-  const { code, state } = req.query;
+// GET /auth/token?code=xxx — called by the main window after the popup sends back the code
+app.get("/auth/token", async (req, res) => {
+  const { code } = req.query;
 
-  // If this is the popup page (no code), serve the HTML
-  if (!code) {
-    return res.sendFile(join(__dirname, "public/auth/callback/index.html"));
-  }
+  if (!code) return res.status(400).json({ error: "Missing code" });
 
   try {
     const tokenRes = await fetch("https://github.com/login/oauth/access_token", {

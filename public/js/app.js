@@ -84,7 +84,7 @@ function connectGitHub() {
     document.getElementById("ghConnectBtn").textContent = "Connecting…";
 
     try {
-      const res = await fetch(`${CONFIG.WORKER_URL}/auth/callback?code=${event.data.gh_code}&state=${event.data.state}`);
+      const res = await fetch(`${CONFIG.WORKER_URL}/auth/token?code=${event.data.gh_code}&state=${event.data.state}`);
       const data = await res.json();
       if (data.error) throw new Error(data.error);
 
