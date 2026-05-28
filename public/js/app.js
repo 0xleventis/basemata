@@ -59,7 +59,7 @@ function connectGitHub() {
   const params = new URLSearchParams({
     client_id: CONFIG.GITHUB_CLIENT_ID,
     redirect_uri: CONFIG.REDIRECT_URI,
-    scope: "public_repo",
+    scope: "repo",
     state: oauthState,
   });
 
